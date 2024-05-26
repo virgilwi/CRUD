@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseUtil {
-private static final String JDBC_URL = "jdbc:h2:~/test;AUTO_SERVER=TRUE";
+private static final String JDBC_URL = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1";
 private static final String JDBC_USER = "sa";
 private static final String JDBC_PASSWORD = "";
 
