@@ -15,6 +15,9 @@ public class Main {
     private static final ShoppingService service = new ShoppingServiceImpl();
     private static final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Main application class with a console menu for managing a shopping list.
+     */
     public static void main(String[] args) {
         createTableIfNotExists();
         while (true) {
@@ -54,6 +57,9 @@ public class Main {
         }
     }
 
+    /**
+     * Creates the shopping_items table if it does not exist.
+     */
     private static void createTableIfNotExists() {
         try (Connection connection = DatabaseUtil.getConnection();
             Statement statement = connection.createStatement()) {
@@ -67,6 +73,10 @@ public class Main {
                 logger.error("Error creating table 'shopping_items'", e);
         }
     }
+
+    /**
+     * Adds a new item to the shopping list.
+     */
     private static void addItem() {
         System.out.print("Enter item name: ");
         String name = scanner.nextLine();
@@ -78,6 +88,9 @@ public class Main {
         System.out.println("Item added: " + item);
     }
 
+    /**
+     * Views a specific item by its ID.
+     */
     private static void viewItem() {
         System.out.print("Enter item ID: ");
         long id = scanner.nextLong();
@@ -92,6 +105,9 @@ public class Main {
         }
     }
 
+    /**
+     * Views all items in the shopping list.
+     */
     private static void viewAllItems() {
         List<ShoppingItem> items = service.getAllItems();
         logger.info("Viewed all items");
@@ -101,6 +117,9 @@ public class Main {
         }
     }
 
+    /**
+     * Updates an existing item in the shopping list.
+     */
     private static void updateItem() {
         System.out.print("Enter item ID: ");
         long id = scanner.nextLong();
@@ -120,6 +139,9 @@ public class Main {
         }
     }
 
+    /**
+     * Removes an item from the shopping list by its ID.
+     */
     private static void removeItem() {
         System.out.print("Enter item ID: ");
         long id = scanner.nextLong();

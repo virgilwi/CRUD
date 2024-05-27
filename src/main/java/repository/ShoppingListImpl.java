@@ -9,6 +9,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementation of the ShoppingList interface.
+ */
 public class ShoppingListImpl implements ShoppingList {
     private static final Logger logger = LoggerFactory.getLogger(ShoppingListImpl.class);
 

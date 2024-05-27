@@ -8,6 +8,9 @@ import repository.ShoppingListImpl;
 
 import java.util.List;
 
+/**
+ * Implementation of the ShoppingService interface.
+ */
 public class ShoppingServiceImpl implements ShoppingService {
     private final ShoppingList list = new ShoppingListImpl();
     private static final Logger logger = LoggerFactory.getLogger(ShoppingServiceImpl.class);
